@@ -46,7 +46,6 @@ public class Resume extends AppCompatActivity {
     private TextView sum_text,price,what;
     private String email,pre_com,password;
     private RecyclerView resume_scroll;
-    List<String> resumeList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +82,7 @@ public class Resume extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override//setupとしてだけでなく、データの更新もしてくれる
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                List<String> resumeList = new ArrayList<>();
                 //StringBuilder sb = new StringBuilder();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {//detailの中身を全てget
                     String key = snapshot.getKey();
